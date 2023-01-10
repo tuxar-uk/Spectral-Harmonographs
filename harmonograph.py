@@ -9,7 +9,7 @@
     Tip: set the display window to fullscreen. On KDE Ubuntu right-click on the title bar,
     select More Actions -> Fullscreen
 '''
-print "Quit: q key, Screenshot: spacebar"
+print("Quit: q key, Screenshot: spacebar")
 
 import pygame, sys, random as r
 from pygame.locals import *
@@ -36,7 +36,7 @@ def check_event():
             sys.exit()
         elif event.type == KEYDOWN and event.key == K_SPACE:
             save=True
-            print "Saving when finished..."
+            print("Saving when finished...")
 steps=0
 pygame.init()
 pygame.event.set_allowed([QUIT, KEYDOWN])
@@ -59,9 +59,9 @@ while True:
     fy1, fy2 =  r.randint(1,mx) + r.gauss(0,sd), r.randint(1,mx) + r.gauss(0,sd)
     px1, px2 =  r.uniform(0,2*pi), r.uniform(0,2*pi)
     py1, py2 =  r.uniform(0,2*pi), r.uniform(0,2*pi)
-    print   ax1,ax2,ay1,ay2
-    print   fx1,fx2,fy1,fy2
-    print   px1,px2,py1,py2
+    #print(ax1,ax2,ay1,ay2)
+    #print(fx1,fx2,fy1,fy2)
+    #print(px1,px2,py1,py2)
 
     dec=1.0
     t=0.0                       # angle for sin
@@ -88,7 +88,7 @@ while True:
     if save:
         pars='shg-{0}_{1}-{2}_{3}-{4}_{5}'.format(ax1,ax2,fx1,fx2,px1,px2)
         pygame.image.save(screen, pars+'.jpg')
-        print "Saved as "+pars+'.jpg'
+        print("Saved as "+pars+'.jpg')
         save=False
 
     screen.fill((0,0,0))
